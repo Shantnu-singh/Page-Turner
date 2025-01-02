@@ -85,7 +85,7 @@ with st.sidebar:
     uploaded_files = st.file_uploader(
         "Upload your PDF files",
         type=['pdf'],
-        accept_multiple_files=True,
+        accept_multiple_files=False,
         help="You can upload multiple PDF files"
     )
 
