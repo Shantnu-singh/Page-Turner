@@ -12,7 +12,12 @@ response = model.generate_content("what is you name" , stream= False)
 
 # reply = []
 
-# for chunks in response.text:
-#     reply.append(chunks)
+def get_gemini_response(prompt, context=""):
+    try:
+        full_prompt = f"Context: {context}\n\nQuestion: {prompt}\n\nPlease answer based on the context provided."
+        response = model.generate_content(full_prompt, stream=False)
+        return response
+    except Exception as e:
+        return f"Error generating response: {str(e)}"
 
-print(response.text)
+# print(response.text)
