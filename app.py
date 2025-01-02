@@ -3,6 +3,7 @@ from streamlit_extras.colored_header import colored_header
 import parse
 import generate
 from parse import get_pdf_text
+from generate import get_gemini_response
 
 
 # Set page configuration
@@ -65,7 +66,7 @@ with st.container():
 
     if user_question:
         with st.spinner('Processing your question...'):
-            reply = prompt.user_input(user_question)
+            reply = get_gemini_response(user_question)
             st.session_state.chat_history.append(("You", user_question))
             st.session_state.chat_history.append(("Assistant", reply))
 

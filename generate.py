@@ -16,7 +16,7 @@ def get_gemini_response(prompt, context=""):
     try:
         full_prompt = f"Context: {context}\n\nQuestion: {prompt}\n\nPlease answer based on the context provided."
         response = model.generate_content(full_prompt, stream=False)
-        return response
+        return response.text
     except Exception as e:
         return f"Error generating response: {str(e)}"
 
