@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_extras.colored_header import colored_header
 import parse
 import generate
+from parse import get_pdf_text
 
 
 # Set page configuration
@@ -96,9 +97,8 @@ with st.sidebar:
     if start_button and uploaded_files:
         with st.spinner('Processing your documents...'):
             try:
-                text = parse.get_pdf_text(uploaded_files)
-                text_chunks = parse.get_chunks(text)
-                prompt.get_vector_store(text_chunks)
+                st.session_state.pdf_text = get_pdf_text(uploaded_files)
+                # st.session_state.files_processed = True
                 st.session_state.files_processed = True
                 st.markdown(
                     '<div class="success-message">✅ Documents processed successfully!</div>',
