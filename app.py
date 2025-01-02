@@ -125,8 +125,8 @@ with st.sidebar:
     # Display file information
     if uploaded_files:
         st.markdown("### Uploaded Files")
-        for file in uploaded_files:
-            st.markdown(f"📄 {file.name}")
+        # for file in uploaded_files:
+        #     st.markdown(f"📄 {file.name}")
 
 # Footer
 st.markdown("---")
