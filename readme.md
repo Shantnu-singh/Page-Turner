@@ -1,5 +1,8 @@
 # Page Turner : AI-Powered Document Conversation 📚💬
 
+
+![Text Alchemy Banner](assets/logo.png)
+
 ## Overview
 PDF Chat Assistant is an intelligent document interaction tool that leverages Google's Gemini AI to enable natural conversations with your PDF documents. The application allows users to upload multiple PDFs and engage in meaningful dialogue about their content through an intuitive chat interface.
 
